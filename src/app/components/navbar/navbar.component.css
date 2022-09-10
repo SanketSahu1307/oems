@@ -1,0 +1,10 @@
+
+a.customBrand{
+    display: grid;
+    line-height: 17px;
+    text-align: center;
+}
+
+a.customBrand span{
+    font-size: xx-small;
+}
