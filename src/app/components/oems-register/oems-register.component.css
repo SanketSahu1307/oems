@@ -1,0 +1,23 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}   
+
+.custom.container{
+    text-align: -webkit-center;
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+    height: 100vh;
+}
+
+.custom form mat-form-field{
+    width: 40%;
+    margin:0px 20px;
+}
+
+@media screen and (max-width:660px) {
+    .custom form mat-form-field{
+        width: 80%;
+    }
+}

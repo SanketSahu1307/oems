@@ -1,0 +1,20 @@
+.custom.container{
+    text-align: -webkit-center;
+    margin-top: 50px;
+    margin-bottom: 55px;
+}
+
+.custom form mat-form-field .col-md-4{
+    width: 80% !important;
+}
+
+.custom form p a{
+    color: red;
+    margin: 5px;
+}
+
+@media screen and (min-width:600px) and (max-width:1000px) {
+    .custom.container .col-md-4{
+        width: 60% !important;
+    }
+}

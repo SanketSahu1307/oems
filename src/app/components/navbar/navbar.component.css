@@ -1,10 +1,15 @@
 
 a.customBrand{
     display: grid;
-    line-height: 17px;
+    line-height: 15px;
     text-align: center;
 }
 
 a.customBrand span{
     font-size: xx-small;
+}
+
+.cusNav ul{
+    display: flex;
+    justify-content: space-around;
 }

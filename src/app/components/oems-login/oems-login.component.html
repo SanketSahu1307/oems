@@ -1,0 +1,35 @@
+<div class="custom container">
+    <div class="card col-md-4" style="box-shadow: 5px 5px gray;">
+        <div class="card-body">
+            <i class="fa fa-user" style="font-size: 50px;"></i>
+            <h2 class="card-title">Login</h2>
+            <form action="">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="username" name="username"> 
+                        <mat-icon matSuffix><i class="fa fa-user"></i></mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="password" [type]="hide ? 'password' : 'text'" name="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" style="border: none;" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <button mat-raised-button color="primary" type="submit">Login</button>
+                    <button mat-raised-button class="ms-4" color="accent" type="reset">Reset</button>
+                </p>
+                <p>
+                    <a [routerLink]="['/signUp']">register</a>
+                    <a href="#">forget password</a>
+                </p>
+            </form>
+        </div>
+    </div>
