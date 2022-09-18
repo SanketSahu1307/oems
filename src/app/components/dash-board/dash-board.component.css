@@ -1,0 +1,26 @@
+
+.dashboardContent{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(72, 178, 240);
+    border: 1px solid #fff;
+}
+
+.sideCnt{
+    width: 20%;
+    background-color: #3f51b5;
+    text-align: center;
+}
+
+.sideCnt ul{
+    padding-left: 0rem !important;
+}
+
+.sideCnt ul li{
+    text-decoration: none;
+    display: grid;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    padding: 10px 0px;
+}

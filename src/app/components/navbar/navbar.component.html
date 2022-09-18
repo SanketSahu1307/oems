@@ -6,10 +6,24 @@
     </mat-toolbar>
 </p> -->
 <mat-toolbar class="navbar navbar-dark" color="primary">
+    <!-- <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button> -->
     <div class="cusNav container">
         <a class="customBrand navbar-brand">O E M S
             <span>Online Exam Management System</span>
         </a>
-        <a class="nav-link" [routerLink]="['/login']" ><i class="fa fa-fw fa-user"></i>Login</a>
+        <p>
+            <a class="nav-link me-3" [routerLink]="['/login']" *ngIf="!auth.isUserLoggedIn()"><i class="fa fa-fw fa-user"></i>Login</a>
+            <a class="nav-link" [routerLink]="['/signUp']" *ngIf="!auth.isUserLoggedIn()" ><i class="fa fa-fw fa-user"></i>Register</a>
+            <a class="nav-link" style="cursor: pointer;" *ngIf="auth.isUserLoggedIn()" [routerLink]="['/logout']">Logout</a>
+            <a class="nav-link" style="cursor: pointer;" *ngIf="auth.isUserLoggedIn()" [routerLink]="['/dashboard']">
+                <i style="padding: 5px 23px 5px 10px;
+                border: solid 3px;
+                margin-left: 25px;
+                border-radius: 70%;" class="fa fa-fw fa-user"></i>
+            </a>
+        </p>
     </div>
 </mat-toolbar>
+

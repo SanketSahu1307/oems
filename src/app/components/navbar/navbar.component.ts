@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAuthServiceService } from 'src/app/pages/OemsApiService/OemsUserAuthentication/user-auth-service.service';
+import { LoginAuthGuard } from 'src/app/pages/OemsApiService/OemsUserGuard/login-auth.guard';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth:UserAuthServiceService) { }
 
+  isLogout=this.auth.isUserLoggedIn();
+  // loginLogout:any;
   ngOnInit(): void {
   }
+
+
+  // isUserLogout(){
+  //   if (this.isLogout==true) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
+
+  
 
 }

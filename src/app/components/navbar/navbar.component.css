@@ -9,7 +9,13 @@ a.customBrand span{
     font-size: xx-small;
 }
 
-.cusNav ul{
+.cusNav p{
     display: flex;
-    justify-content: space-around;
+}
+
+@media screen and (max-width:660px) {
+    .cusNav p{
+        display: flex;
+        font-size: 15px;
+    }
 }
