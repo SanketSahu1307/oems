@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserApiService } from 'src/app/pages/OemsApiService/OemsUserApi/user-api.service';
+import { UserApiService } from 'src/app/pages/OemsApiService/oemsUserApi/user-api.service';
 import Swal from 'sweetalert2';
 
 @Component({

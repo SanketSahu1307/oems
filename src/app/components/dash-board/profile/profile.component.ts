@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { UserApiService } from 'src/app/pages/OemsApiService/oemsUserApi/user-api.service';
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   name: any;
   userDetails:any
@@ -19,7 +19,6 @@ export class AdminDashboardComponent implements OnInit {
     this.userApiData()
   }
 
-  
   userApiData(){
     this.userDashHttp.getUser(this.name).subscribe(resp=>{
       this.userDetails = resp;

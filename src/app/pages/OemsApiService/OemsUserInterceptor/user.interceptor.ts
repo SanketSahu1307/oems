@@ -17,6 +17,8 @@ export class UserInterceptor implements HttpInterceptor {
     let authInterceptor=request.clone({
       setHeaders:{Authorization:`Bearer ${localStorage.getItem('token')}`}
     })
+    console.log(authInterceptor.headers);
+    
     return next.handle(authInterceptor);
   }
 }

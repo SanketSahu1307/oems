@@ -1,1 +1,19 @@
-<p>admin-dashboard works!</p>
+
+<mat-drawer-container class="dashboardContent">
+    <mat-drawer mode="side" opened class="sideCnt">
+        <div class="container">
+            <h2 style="color: yellow;padding-top: 10px;">Welcome {{userDetails.username}}</h2>
+            <ul>
+                <li><a class="nav-link" [routerLink]="['/']"><mat-icon>account_circle</mat-icon><span>Profile</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/dashboard']"><mat-icon>list</mat-icon><span>Categories</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/dashboard']"><mat-icon>add_circle_outline</mat-icon><span>Add Categories</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/dashboard']"><mat-icon>quizzes</mat-icon><span>Quizzes</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/dashboard']"><mat-icon>add</mat-icon><span>Add Quizzes</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/logout']"><mat-icon>logout</mat-icon><span>Logout</span></a></li>
+            </ul>
+        </div> 
+    </mat-drawer>
+    <mat-drawer-content style="color: #fff">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

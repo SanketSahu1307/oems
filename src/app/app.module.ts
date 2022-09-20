@@ -18,6 +18,14 @@ import { LoginAuthGuard } from './pages/OemsApiService/OemsUserGuard/login-auth.
 import { ErrorComponent } from './components/error/error.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UserInterCeptorProvider } from './pages/OemsApiService/OemsUserInterceptor/user.interceptor';
+import { CategoriesComponent } from './components/admin-dashboard/categories/categories.component';
+import { AddCategoriesComponent } from './components/admin-dashboard/add-categories/add-categories.component';
+import { QuizzesComponent } from './components/admin-dashboard/quizzes/quizzes.component';
+import { AddQuizzesComponent } from './components/admin-dashboard/add-quizzes/add-quizzes.component';
+import { AllQuizzesComponent } from './components/dash-board/all-quizzes/all-quizzes.component';
+import { AdminProfileComponent } from './components/admin-dashboard/admin-profile/admin-profile.component';
+import { ProfileComponent } from './components/dash-board/profile/profile.component';
+import { FakeStoreComponent } from './components/fake-store/fake-store.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,15 @@ import { UserInterCeptorProvider } from './pages/OemsApiService/OemsUserIntercep
     LogoutComponent,
     DashBoardComponent,
     ErrorComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    CategoriesComponent,
+    AddCategoriesComponent,
+    QuizzesComponent,
+    AddQuizzesComponent,
+    AllQuizzesComponent,
+    AdminProfileComponent,
+    ProfileComponent,
+    FakeStoreComponent
   ],
   imports: [
     BrowserModule,

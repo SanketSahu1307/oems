@@ -18,9 +18,26 @@
 
 .sideCnt ul li{
     text-decoration: none;
-    display: grid;
+    display: flex;
     color: #fff;
     text-transform: uppercase;
-    border: 1px solid #fff;
-    padding: 10px 0px;
+    /* border: 1px solid #fff; */
+    padding: 10px 15%;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.sideCnt ul li a{
+    display: flex;
+}
+
+.sideCnt ul li:hover{
+    color: #3f51b5;
+    background: #fff;
+}
+
+.sideCnt ul li span{
+    padding-left: 20px;
+    line-height: 2;
 }

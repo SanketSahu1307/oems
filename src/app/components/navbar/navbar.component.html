@@ -16,13 +16,14 @@
         <p>
             <a class="nav-link me-3" [routerLink]="['/login']" *ngIf="!auth.isUserLoggedIn()"><i class="fa fa-fw fa-user"></i>Login</a>
             <a class="nav-link" [routerLink]="['/signUp']" *ngIf="!auth.isUserLoggedIn()" ><i class="fa fa-fw fa-user"></i>Register</a>
-            <a class="nav-link" style="cursor: pointer;" *ngIf="auth.isUserLoggedIn()" [routerLink]="['/logout']">Logout</a>
             <a class="nav-link" style="cursor: pointer;" *ngIf="auth.isUserLoggedIn()" [routerLink]="['/dashboard']">
-                <i style="padding: 5px 23px 5px 10px;
+                <!-- <i style="padding: 5px 23px 5px 10px;
                 border: solid 3px;
                 margin-left: 25px;
-                border-radius: 70%;" class="fa fa-fw fa-user"></i>
+                border-radius: 70%;" class="fa fa-fw fa-user"></i> -->
+                <mat-icon style="height: auto;width: auto;font-size: 45px;padding: 5px 25px;">account_circle</mat-icon>
             </a>
+            <a class="nav-link" style="cursor: pointer;line-height: 3;" *ngIf="auth.isUserLoggedIn()" [routerLink]="['/logout']">Logout</a>
         </p>
     </div>
 </mat-toolbar>

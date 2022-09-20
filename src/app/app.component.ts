@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'oems';
 
   sweetalert(){
     Swal.fire("Sweet allert add");
