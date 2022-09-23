@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminComponentApiService } from 'src/app/pages/OemsApiService/oemsComponentApi/admin-component-api.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService:AdminComponentApiService) { }
+
+  categories:any;
 
   ngOnInit(): void {
+    this.getCategoriesData()
+  }
+  
+
+  getCategoriesData(){
+    this.httpService.getAllCategoryUrl().subscribe(res=>{
+      this.categories=res;
+    },err=>{
+      console.log(err);
+      
+    })
   }
 
 }

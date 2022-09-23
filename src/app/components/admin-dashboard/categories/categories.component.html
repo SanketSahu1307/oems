@@ -1,1 +1,18 @@
-<p>categories works!</p>
+<mat-card style="margin: 20px;">
+    <mat-card-title>All Categories</mat-card-title>
+    
+    <mat-divider inset></mat-divider>
+    <br>
+    <br>
+    <div *ngFor="let item of categories">
+      <mat-card-title>{{item.title}}</mat-card-title>
+    <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+    <hr>
+    <br>
+    </div>
+
+
+    <mat-card-actions style="text-align: center;">
+      <button mat-raised-button color="primary"  [routerLink]="[{outlets:{'adminprofile':['addCategories']}}]">Add New Category</button>
+    </mat-card-actions>
+  </mat-card>

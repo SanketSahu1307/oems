@@ -1,1 +1,30 @@
-<p>add-categories works!</p>
+<mat-card style="margin: 20px;">
+  <mat-card-title>Add New Category</mat-card-title>
+
+  <mat-divider inset></mat-divider>
+  <br>
+  <br>
+      <div class="custom">
+        <form style="text-align: center" (submit)="createCategory()" [formGroup]="categoryList">
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Title</mat-label>
+              <input matInput placeholder="Title" name="title" formControlName="title">
+              <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea matInput rows="6" placeholder="Description" name="description" formControlName="description"></textarea>
+              <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+            </mat-form-field>
+          </p> 
+          <mat-card-actions style="text-align: center;">
+            <button mat-raised-button color="primary" type="submit">Add</button>
+          </mat-card-actions>
+        </form> 
+      </div>
+
+ 
+</mat-card>

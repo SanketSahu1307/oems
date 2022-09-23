@@ -1,1 +1,50 @@
-<p>add-quizzes works!</p>
+<mat-card style="margin: 20px;">
+  <mat-card-title>Add New Quizzes</mat-card-title>
+  <mat-divider inset></mat-divider>
+  <br>
+  <br>
+  <div class="custom">
+    <form style="text-align: center">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title" name="title">
+          <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput rows="6" placeholder="Description" name="description"></textarea>
+          <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" name="title">
+            <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+          </mat-form-field>
+      </div>
+      <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" name="title">
+            <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+          </mat-form-field>
+      </div>
+      </div>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title" name="title">
+          <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <mat-card-actions style="text-align: center;">
+        <button mat-raised-button color="primary">Add</button>
+      </mat-card-actions>
+    </form>
+  </div>
+</mat-card>

@@ -16,13 +16,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.name = this.activeRoute.snapshot.params['name'];
+    console.log(this.name);
     this.userApiData()
-  }
+  } 
 
   userApiData(){
     this.userDashHttp.getUser(this.name).subscribe(resp=>{
       this.userDetails = resp;
-      console.log(resp);
+      console.log(this.userDetails);
       console.log(this.userDetails.profile);
       
     },error=>{

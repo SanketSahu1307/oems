@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserApiService } from 'src/app/pages/OemsApiService/oemsUserApi/user-api.service';
 import Swal from 'sweetalert2';
 
@@ -19,7 +20,7 @@ export class OemsRegisterComponent implements OnInit {
     email:new FormControl('',[Validators.required,Validators.email]),
     phone:new FormControl('',[Validators.required]),
   })
-  constructor(private oemsService:UserApiService) { } 
+  constructor(private oemsService:UserApiService,private route:Router) { } 
   ngOnInit(): void {
     
   }
@@ -28,7 +29,8 @@ export class OemsRegisterComponent implements OnInit {
     this.oemsService.saveUser(this.signUp.value).subscribe(res=>{
       console.log("success"),
       Swal.fire('Successfully Registered.','Thankyou you... Welcome to Career Infotech OEMS','success'); 
-    },
+      this.route.navigate([''])
+    },  
       err=>{
         console.log("error raised..",err);
         Swal.fire('Something Went Wrong.','Please try sometime later...Sorry','error');

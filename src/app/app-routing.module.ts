@@ -15,22 +15,23 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { OemsLoginComponent } from './components/oems-login/oems-login.component';
 import { OemsRegisterComponent } from './components/oems-register/oems-register.component';
 import { LoginAuthGuard } from './pages/OemsApiService/OemsUserGuard/login-auth.guard';
+import { UserAdminGuard } from './pages/OemsApiService/OemsUserGuard/user-admin.guard';
 
 const routes: Routes = [
   {path:"",redirectTo:"login", pathMatch:"full"},
   {path:"login", component:OemsLoginComponent},
   {path:"signUp", component:OemsRegisterComponent},
   {path:"adminDashboard/:name", component:AdminDashboardComponent,canActivate:[LoginAuthGuard],children:[
-    {path:"",component:AdminProfileComponent},
-    {path:"categories",component:CategoriesComponent}, 
-    {path:"addCategories",component:AddCategoriesComponent},
-    {path:"quizzes",component:QuizzesComponent},
-    {path:"addQuizzes",component:AddQuizzesComponent},
-    {path:"fake",component:FakeStoreComponent}
+    {path:"",component:AdminProfileComponent,outlet:"adminprofile"},
+    {path:"categories",component:CategoriesComponent,outlet:"adminprofile"}, 
+    {path:"addCategories",component:AddCategoriesComponent,outlet:"adminprofile"},
+    {path:"quizzes",component:QuizzesComponent,outlet:"adminprofile"},
+    {path:"addQuizzes",component:AddQuizzesComponent,outlet:"adminprofile"},
+    // {path:"fake",component:FakeStoreComponent}
   ]},
   {path:"dashboard/:name", component:DashBoardComponent,canActivate:[LoginAuthGuard],children:[
-    {path:"profile",component:ProfileComponent},
-    {path:"allQuizzes",component:AllQuizzesComponent}
+    {path:"",component:ProfileComponent,outlet:"userprofile"},
+    {path:"allQuizzes",component:AllQuizzesComponent,outlet:"userprofile"}
   ]},
   {path:"logout", component:LogoutComponent},
   {path:"**", component:ErrorComponent}
