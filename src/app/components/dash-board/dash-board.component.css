@@ -2,13 +2,12 @@
 .dashboardContent{
     height: 100%;
     width: 100%;
-    background-color: rgb(72, 178, 240);
     border: 1px solid #fff;
 }
 
 .sideCnt{
     width: 20%;
-    background-color: #3f51b5;
+    background-color: #f7f7fa;
     text-align: center;
 }
 
@@ -19,7 +18,7 @@
 .sideCnt ul li{
     text-decoration: none;
     display: flex;
-    color: #fff;
+    color: #9e9e9e;
     text-transform: uppercase;
     /* border: 1px solid #fff; */
     padding: 10px 15%;

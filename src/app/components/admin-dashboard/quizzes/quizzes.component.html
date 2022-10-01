@@ -4,8 +4,11 @@
     <mat-divider inset></mat-divider>
     <br>
     <br>
-    <mat-card-title>All Categories</mat-card-title>
-    <mat-card-subtitle>Start</mat-card-subtitle>
+    <div *ngFor="let quiz of quizDetail">
+      <mat-card-title>{{quiz.title}}</mat-card-title>
+      <mat-card-subtitle>{{quiz.description}}</mat-card-subtitle>
+      <span></span>
+    </div>
 
     <mat-divider inset></mat-divider>
 

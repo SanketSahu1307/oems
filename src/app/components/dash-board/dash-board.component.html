@@ -2,16 +2,16 @@
 <mat-drawer-container class="dashboardContent">
     <mat-drawer mode="side" opened class="sideCnt">
         <div class="container">
-            <h2 style="color: yellow;padding-top:10px;">Welcome {{userDetails.username}}</h2>
+            <h2 style="color: #3f51b5;padding-top:10px;">Welcome {{userDetails.username}}</h2>
             <ul>
-                <li><a class="nav-link" [routerLink]="[{outlets:{userprofile:['profile']}}]"><mat-icon>account_circle</mat-icon><span>Profile</span></a></li>
-                <li><a class="nav-link" [routerLink]="[{outlets:{userprofile:['allQuizzes']}}]"><mat-icon>list</mat-icon><span>ALL Quizzes</span></a></li>
+                <li><a class="nav-link" [routerLink]="['./']"><mat-icon>account_circle</mat-icon><span>Profile</span></a></li>
+                <li><a class="nav-link" [routerLink]="['allQuizzes']"><mat-icon>list</mat-icon><span>ALL Quizzes</span></a></li>
                 <li><a class="nav-link" ><mat-icon>quizzes</mat-icon><span>HTML</span></a></li>
                 <li><a class="nav-link" [routerLink]="['/logout']"><mat-icon>logout</mat-icon><span>Logout</span></a></li>
             </ul> 
         </div>
     </mat-drawer>
-    <mat-drawer-content style="color: #fff">
+    <mat-drawer-content>
         <!-- <table style="width: 700px; margin: 30px auto;text-align: center;" class="table table-light">
                 <thead class="thead-light">
                     <tr>
@@ -35,6 +35,6 @@
                 </tbody>
         </table> -->
         <!-- <h2>Welcome to C.I. Solutions OEMS </h2> -->
-        <router-outlet name='userprofile'></router-outlet>
+        <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

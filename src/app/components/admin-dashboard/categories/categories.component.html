@@ -1,3 +1,4 @@
+
 <mat-card style="margin: 20px;">
     <mat-card-title>All Categories</mat-card-title>
     
@@ -5,14 +6,66 @@
     <br>
     <br>
     <div *ngFor="let item of categories">
-      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-title style="display: flex;justify-content:space-between">{{item.title}}
+        <div class="actionBtn">
+          <a class="btn btn-success me-2">Add Quizzes</a>
+          <a class="btn btn-warning me-2" (click)="getCategoryById(item.category_id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
+          <a class="btn btn-danger me-5" (click)="deleteCategoryById(item.category_id)"><i class="fa fa-trash"></i></a>
+        </div>
+      </mat-card-title>
     <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
     <hr>
     <br>
     </div>
-
-
     <mat-card-actions style="text-align: center;">
-      <button mat-raised-button color="primary"  [routerLink]="[{outlets:{'adminprofile':['addCategories']}}]">Add New Category</button>
-    </mat-card-actions>
-  </mat-card>
+      <button mat-raised-button color="primary"  [routerLink]="['../addCategories']">Add New Category</button>
+    </mat-card-actions> 
+
+    
+      <div class="custom modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              <mat-card style="margin: 20px;">
+                <mat-card-title>update Category</mat-card-title>
+              
+                <mat-divider inset></mat-divider>
+                <br>
+                <br>
+                    <div class="custom">
+                      <form style="text-align: center" [formGroup]="categoryUpdateList" (submit)="updateCategory()">
+                        <p> 
+                          <mat-form-field appearance="fill">
+                            <mat-label>Title</mat-label>
+                            <input matInput placeholder="Title" name="title" formControlName="title">
+                            <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                          </mat-form-field>
+                        </p>
+                        <p>
+                          <mat-form-field appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput rows="6" placeholder="Description" name="description" formControlName="description"></textarea>
+                            <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                          </mat-form-field>
+                        </p>  
+                        <mat-card-actions style="text-align: center;">
+                          <button mat-raised-button color="primary" type="submit">Update</button>
+                          <button mat-raised-button color="warn" data-bs-dismiss="modal">Cancel</button>
+                        </mat-card-actions>
+                      </form> 
+                    </div>
+              
+               
+              </mat-card> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </mat-card>
+
+
+ 
+  

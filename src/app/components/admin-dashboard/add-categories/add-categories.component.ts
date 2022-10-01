@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminComponentApiService } from 'src/app/pages/OemsApiService/oemsComponentApi/admin-component-api.service';
 
-@Component({
+@Component({ 
   selector: 'app-add-categories',
   templateUrl: './add-categories.component.html',
   styleUrls: ['./add-categories.component.css']
 })
 export class AddCategoriesComponent implements OnInit {
 
-  constructor(private categoryServ:AdminComponentApiService,private route:Router) { }
+  constructor(private categoryServ:AdminComponentApiService,private route:Router,private activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -21,11 +21,12 @@ export class AddCategoriesComponent implements OnInit {
   })
 
   createCategory(){
-    console.log(this.categoryList.value);
-    this.route.navigate(['adminDashboard/Santosh@123/(adminprofile:addCategories)']);
+    // console.log(this.categoryList.value);
+    this.route.navigate(["../categories"],{relativeTo:this.activeRoute});
+
     this.categoryServ.addCategoryUrl(this.categoryList.value).subscribe(res=>{
       console.log(res);
-    },err=>{
+    },err=>{ 
       console.log(err);
       
     })

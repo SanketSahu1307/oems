@@ -1,0 +1,13 @@
+.custom mat-form-field{
+    width: 100%;
+}
+
+.custom.modal{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    height: 100vh;
+}
+
+.custom.modal .modal-dialog{
+    width: 40%;
+}

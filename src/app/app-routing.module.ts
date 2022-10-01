@@ -22,19 +22,19 @@ const routes: Routes = [
   {path:"login", component:OemsLoginComponent},
   {path:"signUp", component:OemsRegisterComponent},
   {path:"adminDashboard/:name", component:AdminDashboardComponent,canActivate:[LoginAuthGuard],children:[
-    {path:"",component:AdminProfileComponent,outlet:"adminprofile"},
-    {path:"categories",component:CategoriesComponent,outlet:"adminprofile"}, 
-    {path:"addCategories",component:AddCategoriesComponent,outlet:"adminprofile"},
-    {path:"quizzes",component:QuizzesComponent,outlet:"adminprofile"},
-    {path:"addQuizzes",component:AddQuizzesComponent,outlet:"adminprofile"},
-    // {path:"fake",component:FakeStoreComponent}
+    {path:"",component:AdminProfileComponent},
+    {path:"categories",component:CategoriesComponent}, 
+    {path:"addCategories",component:AddCategoriesComponent},
+    {path:"quizzes",component:QuizzesComponent},
+    {path:"addQuizzes",component:AddQuizzesComponent},
   ]},
   {path:"dashboard/:name", component:DashBoardComponent,canActivate:[LoginAuthGuard],children:[
-    {path:"",component:ProfileComponent,outlet:"userprofile"},
-    {path:"allQuizzes",component:AllQuizzesComponent,outlet:"userprofile"}
+    {path:"",component:ProfileComponent},
+    {path:"allQuizzes",component:AllQuizzesComponent}
   ]},
   {path:"logout", component:LogoutComponent},
-  {path:"**", component:ErrorComponent}
+  {path:"**", component:ErrorComponent},
+  // {path:"fake",component:FakeStoreComponent}
 ]; 
 
 @NgModule({

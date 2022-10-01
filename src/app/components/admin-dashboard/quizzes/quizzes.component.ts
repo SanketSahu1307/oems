@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminComponentApiService } from 'src/app/pages/OemsApiService/oemsComponentApi/admin-component-api.service';
 
 @Component({
   selector: 'app-quizzes',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private quizServ:AdminComponentApiService) { }
+
+  quizDetail:any;
 
   ngOnInit(): void {
+    this.viewQuizzes();
   }
 
+  viewQuizzes(){
+    this.quizServ.getQuizzes().subscribe(res=>{
+      this.quizDetail=res
+      console.log(this.quizDetail);
+    },err=>{
+      console.log(err);
+    })
+  }
+ 
 }

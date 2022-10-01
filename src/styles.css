@@ -8,3 +8,6 @@ html, body {
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.modal-backdrop.fade.show {
+    z-index: 0;
+}
