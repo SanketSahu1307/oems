@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent {
 
+  title:any;
+
   sweetalert(){
     Swal.fire("Sweet allert add");
   }

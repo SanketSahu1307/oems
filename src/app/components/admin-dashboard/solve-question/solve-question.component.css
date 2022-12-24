@@ -1,0 +1,12 @@
+.mat-radio-button mat-radio-button{
+    padding-left: 30px;
+}
+
+.actionBtn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-form-field {
+    width: 100%;
+}

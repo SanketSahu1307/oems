@@ -8,7 +8,7 @@ import { AdminComponentApiService } from 'src/app/pages/OemsApiService/oemsCompo
   templateUrl: './add-categories.component.html',
   styleUrls: ['./add-categories.component.css']
 })
-export class AddCategoriesComponent implements OnInit {
+export class AddCategoriesComponent implements OnInit { 
 
   constructor(private categoryServ:AdminComponentApiService,private route:Router,private activeRoute:ActivatedRoute) { }
 

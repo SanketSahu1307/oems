@@ -8,7 +8,7 @@
     <div *ngFor="let item of categories">
       <mat-card-title style="display: flex;justify-content:space-between">{{item.title}}
         <div class="actionBtn">
-          <a class="btn btn-success me-2">Add Quizzes</a>
+          <a class="btn btn-success me-2" (click)="moveToQuizzes(item.category_id)">Add Quizzes</a>
           <a class="btn btn-warning me-2" (click)="getCategoryById(item.category_id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
           <a class="btn btn-danger me-5" (click)="deleteCategoryById(item.category_id)"><i class="fa fa-trash"></i></a>
         </div>

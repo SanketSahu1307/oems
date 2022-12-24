@@ -8,6 +8,9 @@ import {MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from "@angular/material/divider";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 const Material=[
@@ -18,7 +21,10 @@ const Material=[
   MatFormFieldModule,
   MatButtonModule,
   MatSidenavModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSlideToggleModule,
+  MatSelectModule,
+  MatRadioModule
 ]
 
 @NgModule({

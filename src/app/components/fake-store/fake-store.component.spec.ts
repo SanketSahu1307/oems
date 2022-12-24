@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FakeStoreComponent } from './fake-store.component';
@@ -8,7 +9,8 @@ describe('FakeStoreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FakeStoreComponent ]
+      declarations: [ FakeStoreComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 

@@ -1,0 +1,104 @@
+<mat-card style="margin: 20px;">
+    <mat-card-title>Question</mat-card-title>
+    <div class="container" *ngFor="let quiz of questions; let i=index">
+        <div class="actionBtn">
+            <div>
+                <h2>{{i+1}}) {{quiz.content}}</h2>
+            </div>
+            <div>
+                <a class="btn btn-warning me-2" (click)="QuestionById(quiz.question_id)" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-danger me-5" (click)="deleteQuestionById(quiz.question_id)"><i
+                        class="fa fa-trash"></i></a>
+            </div>
+        </div>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ans">
+            <mat-radio-button value="{{quiz.option1}}">{{quiz.option1}}</mat-radio-button><br><br>
+            <mat-radio-button value="{{quiz.option2}}">{{quiz.option2}}</mat-radio-button><br><br>
+            <mat-radio-button value="{{quiz.option3}}">{{quiz.option3}}</mat-radio-button><br><br>
+            <mat-radio-button value="{{quiz.option4}}">{{quiz.option4}}</mat-radio-button><br>
+        </mat-radio-group>
+        <hr>
+        <div>Your Answer is: {{quiz.givenAnswer}}</div>
+    </div>
+</mat-card>
+
+
+<!-- modal for question update  -->
+
+<div class="custom modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <mat-card style="margin: 20px;">
+                  <mat-card-title>update Quizzes</mat-card-title>
+      
+                  <mat-divider inset></mat-divider>
+                  <br>
+                  <br>
+                  <div class="custom">
+                    <form style="text-align: center" (submit)="updateQuestion()" [formGroup]="questionUpdateList">
+                        
+                        <p>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Question</mat-label>
+                                <input matInput placeholder="question" name="content" formControlName="content">
+                                <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                            </mat-form-field>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Option1</mat-label>
+                                    <input matInput placeholder="option1" name="option1" formControlName="option1">
+                                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Option2</mat-label>
+                                    <input matInput placeholder="option2" name="option2" formControlName="option2">
+                                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Option3</mat-label>
+                                    <input matInput placeholder="option3" name="option3" formControlName="option3">
+                                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Option4</mat-label>
+                                    <input matInput placeholder="option4" name="option4" formControlName="option4">
+                                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                                </mat-form-field>
+                            </div>
+                        </div>
+     
+                        <mat-form-field appearance="fill">
+                            <mat-label>Correct Answer</mat-label>
+                            <input matInput placeholder="answer" name="answer" formControlName="answer">
+                            <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                        </mat-form-field>
+    
+                        <mat-card-actions style="text-align: center;">
+                            <button mat-raised-button color="primary" type="submit">Update</button>
+                        </mat-card-actions>
+                    </form>
+                  </div>
+      
+      
+                </mat-card>
+              </div>
+
+
+        </div>
+    </div>
+</div>
+
+

@@ -2,7 +2,7 @@
 
 html, body { 
     height: 80vh; 
-    background: url(./assets/Images/ExamBanner.jpg);
+    /* background: url(./assets/Images/ExamBanner.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 }

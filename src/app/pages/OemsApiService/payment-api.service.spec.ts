@@ -1,16 +1,16 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
-import { AdminComponentApiService } from './admin-component-api.service';
+import { PaymentApiService } from './payment-api.service';
 
-describe('AdminComponentApiService', () => {
-  let service: AdminComponentApiService;
+describe('PaymentApiService', () => {
+  let service: PaymentApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
     });
-    service = TestBed.inject(AdminComponentApiService);
+    service = TestBed.inject(PaymentApiService);
   });
 
   it('should be created', () => {

@@ -3,13 +3,14 @@
     <mat-drawer mode="side" opened class="sideCnt"> 
         <div class="container">
             <h2 style="color: #3f51b5;padding-top: 10px;">Welcome {{userDetails.username}}</h2>
-            <ul>
+            <ul> 
                 <li><a class="nav-link" [routerLink]="['./']"><mat-icon>account_circle</mat-icon><span>Profile</span></a></li>
                 <li><a class="nav-link" [routerLink]="['categories']"><mat-icon>list</mat-icon><span>Categories</span></a></li>
                 <li><a class="nav-link" [routerLink]="['addCategories']"><mat-icon>add_circle_outline</mat-icon><span>Add Categories</span></a></li>
                 <li><a class="nav-link" [routerLink]="['quizzes']"><mat-icon>quizzes</mat-icon><span>Quizzes</span></a></li>
+                <li><a class="nav-link" [routerLink]="['allQuizzes']"><mat-icon>quizzes</mat-icon><span>ALL Question</span></a></li>
                 <!-- [routerLink]="[{outlets:{adminprofile:['addQuizzes']}}]" -->
-                <li><a class="nav-link" [routerLink]="['addQuizzes']"><mat-icon>add</mat-icon><span>Add Quizzes</span></a></li>
+                <!-- <li><a class="nav-link" [routerLink]="['addQuizzes']"><mat-icon>add</mat-icon><span>Add Quizzes</span></a></li> -->
                 <li><a class="nav-link" [routerLink]="['/logout']"><mat-icon>logout</mat-icon><span>Logout</span></a></li>
             </ul>
         </div> 

@@ -1,20 +1,21 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 
-import { OemsLoginComponent } from './oems-login.component';
+import { QuestionComponent } from './question.component';
 
-describe('OemsLoginComponent', () => {
-  let component: OemsLoginComponent;
-  let fixture: ComponentFixture<OemsLoginComponent>;
+describe('QuestionComponent', () => {
+  let component: QuestionComponent;
+  let fixture: ComponentFixture<QuestionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OemsLoginComponent ],
-      imports: [HttpClientModule]
+      declarations: [ QuestionComponent ],
+      imports: [HttpClientModule,FormBuilder],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OemsLoginComponent);
+    fixture = TestBed.createComponent(QuestionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AddCategoriesComponent } from './add-categories.component';
 
@@ -8,7 +10,8 @@ describe('AddCategoriesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCategoriesComponent ]
+      declarations: [ AddCategoriesComponent ],
+      imports: [RouterTestingModule,HttpClientModule]
     })
     .compileComponents();
 

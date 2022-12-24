@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminComponentApiService } from 'src/app/pages/OemsApiService/oemsComponentApi/admin-component-api.service';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(private httpService:AdminComponentApiService) { }
+  constructor(private httpService:AdminComponentApiService,private route:Router,private activeRoute:ActivatedRoute) { }
   
 
   categories:any;
@@ -56,10 +57,12 @@ export class CategoriesComponent implements OnInit {
 
   updateCategory(){
     this.httpService.updateCategory(this.categoryUpdateList.value).subscribe(res=>{
-      window.location.reload();
+      Swal.fire('Successfully Updated','','success').then(res=>{
+        window.location.reload();
+      })
     },err=>{
       console.log(err);
-      
+      Swal.fire('Something Went Wrong','Please try later','error');
     })
   }
 
@@ -86,7 +89,10 @@ export class CategoriesComponent implements OnInit {
       }
     })
 
-   
+  }
+
+  moveToQuizzes(id:any){
+    this.route.navigate(['../addQuizzes/',id],{relativeTo:this.activeRoute})
   }
 
 }

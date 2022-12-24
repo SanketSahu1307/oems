@@ -10,7 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatModule } from "./mat/mat/mat.module";
 import { OemsLoginComponent } from './components/oems-login/oems-login.component';
 import { OemsRegisterComponent } from './components/oems-register/oems-register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './components/logout/logout.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
@@ -26,6 +26,9 @@ import { AllQuizzesComponent } from './components/dash-board/all-quizzes/all-qui
 import { AdminProfileComponent } from './components/admin-dashboard/admin-profile/admin-profile.component';
 import { ProfileComponent } from './components/dash-board/profile/profile.component';
 import { FakeStoreComponent } from './components/fake-store/fake-store.component';
+import { QuestionComponent } from './components/admin-dashboard/question/question.component';
+import { SolveQuestionComponent } from './components/admin-dashboard/solve-question/solve-question.component';
+import { PaymentGatewayComponent } from "./components/payment-gateway/payment-gateway.component";
 
 @NgModule({
   declarations: [
@@ -45,12 +48,16 @@ import { FakeStoreComponent } from './components/fake-store/fake-store.component
     AllQuizzesComponent,
     AdminProfileComponent,
     ProfileComponent,
-    FakeStoreComponent
+    FakeStoreComponent,
+    QuestionComponent,
+    SolveQuestionComponent,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatModule,
     ReactiveFormsModule,
     HttpClientModule

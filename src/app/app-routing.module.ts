@@ -5,7 +5,9 @@ import { AddQuizzesComponent } from './components/admin-dashboard/add-quizzes/ad
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './components/admin-dashboard/admin-profile/admin-profile.component';
 import { CategoriesComponent } from './components/admin-dashboard/categories/categories.component';
+import { QuestionComponent } from './components/admin-dashboard/question/question.component';
 import { QuizzesComponent } from './components/admin-dashboard/quizzes/quizzes.component';
+import { SolveQuestionComponent } from './components/admin-dashboard/solve-question/solve-question.component';
 import { AllQuizzesComponent } from './components/dash-board/all-quizzes/all-quizzes.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { ProfileComponent } from './components/dash-board/profile/profile.component';
@@ -26,11 +28,16 @@ const routes: Routes = [
     {path:"categories",component:CategoriesComponent}, 
     {path:"addCategories",component:AddCategoriesComponent},
     {path:"quizzes",component:QuizzesComponent},
-    {path:"addQuizzes",component:AddQuizzesComponent},
+    {path:"addQuizzes/:categoryId",component:AddQuizzesComponent},
+    {path:"allQuizzes",component:AllQuizzesComponent},
+    {path:"question/:id",component:QuestionComponent},
+    {path:"quiz/:id",component:SolveQuestionComponent}
   ]},
   {path:"dashboard/:name", component:DashBoardComponent,canActivate:[LoginAuthGuard],children:[
     {path:"",component:ProfileComponent},
-    {path:"allQuizzes",component:AllQuizzesComponent}
+    {path:"allQuizzes",component:AllQuizzesComponent},
+    {path:"question/:id",component:QuestionComponent},
+    {path:"quiz/:id",component:SolveQuestionComponent}
   ]},
   {path:"logout", component:LogoutComponent},
   {path:"**", component:ErrorComponent},

@@ -1,0 +1,12 @@
+<div class="container">
+    <form [formGroup]="payment" (ngSubmit)="doPayment()">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput placeholder="Enter Amount" name="amount" formControlName="amount"> 
+                <mat-hint *ngIf="payment.controls['amount'].invalid && payment.controls['amount'].touched">enter username</mat-hint>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" type="submit">Pay</button>
+    </form>
+</div>

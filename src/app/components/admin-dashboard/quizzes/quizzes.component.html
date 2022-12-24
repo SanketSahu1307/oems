@@ -1,18 +1,92 @@
 <mat-card style="margin: 20px;">
-    <mat-card-title>All Categories</mat-card-title>
-    
-    <mat-divider inset></mat-divider>
-    <br>
-    <br>
-    <div *ngFor="let quiz of quizDetail">
-      <mat-card-title>{{quiz.title}}</mat-card-title>
-      <mat-card-subtitle>{{quiz.description}}</mat-card-subtitle>
-      <span></span>
+  <mat-card-title>All Categories</mat-card-title>
+
+  <mat-divider inset></mat-divider>
+  <br> 
+  <br>
+  <div *ngFor="let quiz of quizDetail">
+    <mat-card-title style="display: flex;justify-content:space-between">{{quiz.title}}
+      <div class="actionBtn">
+        <a class="btn btn-success me-2" (click)="moveToQuestion(quiz.quiz_id)">Add Question</a>
+        <a class="btn btn-success me-2" (click)="moveToSolvingQuiz(quiz.quiz_id)">Solve Question</a>
+        <a class="btn btn-warning me-2" (click)="QuizById(quiz.quiz_id)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal"><i class="fa fa-pencil"></i></a>
+        <a class="btn btn-danger me-5" (click)="deleteQuizById(quiz.quiz_id)"><i class="fa fa-trash"></i></a>
+      </div>
+    </mat-card-title>
+    <mat-card-subtitle>{{quiz.description}}</mat-card-subtitle>
+    <div class="markQuiz">
+      <span>Marks : {{quiz.maxMarks}} || No. Of Question : {{quiz.numberOfQuestions}}</span>
     </div>
+    <hr>
+    <br>
+  </div>
+  <!-- <mat-card-actions style="text-align: center;">
+    <button mat-raised-button color="primary" [routerLink]="['../addCategories']">Add New Category</button>
+  </mat-card-actions> -->
 
-    <mat-divider inset></mat-divider>
 
-    <mat-card-actions style="text-align: center;">
-      <button mat-raised-button color="primary">Add New Category</button>
-    </mat-card-actions>
-  </mat-card>
+  <div class="custom modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <mat-card style="margin: 20px;">
+            <mat-card-title>update Quizzes</mat-card-title>
+
+            <mat-divider inset></mat-divider>
+            <br>
+            <br>
+            <div class="custom">
+              <form style="text-align: center" [formGroup]="quizzesUpdateList" (submit)="updateQuizzes()">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Title" name="title" formControlName="title">
+                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput rows="6" placeholder="Description" name="description"
+                      formControlName="description"></textarea>
+                    <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                  </mat-form-field>
+                </p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Maximum Marks</mat-label>
+                      <input matInput placeholder="maxMarks" name="maxMarks" type="number" formControlName="maxMarks">
+                      <!-- <mat-hint  *ngIf="signIn.controls['password'].invalid && signIn.controls['password'].touched">enter password</mat-hint> -->
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Number of Questions</mat-label>
+                      <input matInput placeholder="numberOfQuestions" type="number" name="numberOfQuestions" formControlName="numberOfQuestions">
+                      <!-- <mat-hint  *ngIf="signIn.controls['numberOfQuestions'].invalid && signIn.controls['numberOfQuestions'].touched">enter password</mat-hint> -->
+                    </mat-form-field>
+                  </div>
+                </div>
+                <p>
+                  <mat-slide-toggle formControlName="active">Active</mat-slide-toggle>
+                </p>
+                <mat-card-actions style="text-align: center;">
+                  <button mat-raised-button color="primary" type="submit">Update</button>
+                  <button mat-raised-button color="warn" data-bs-dismiss="modal">Cancel</button>
+                </mat-card-actions>
+              </form>
+            </div>
+
+
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</mat-card>
